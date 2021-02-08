@@ -3,9 +3,8 @@ import sys
 from datetime import datetime
 import pandas as pd
 from selenium import webdriver
-# from selenium.webdriver.firefox.options import Options
-# from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+# from project_logging import logger, error_email
 
 
 class WebScraper:
@@ -106,9 +105,10 @@ def main():
         ws.load_url()
         ws.save_results()
     except Exception as e:
-    # logger.error(e, exc_info=sys.exc_info())
-    # error_email(str(e))
-    # logger.info('-' * 100)
+        print(e)
+        # logger.error(e, exc_info=sys.exc_info())
+        # error_email(str(e))
+        # logger.info('-' * 100)
     finally:
         ws.close()
 
